@@ -39,9 +39,9 @@ class Sprite (pygame.sprite.Sprite):
     def change_color(self):
         self.image.fill(random.choice([Yellow , Magente, Orange, White]))
 
-    def change_background_color():
-        global bg_color
-        bg_color = random.choice([Blue, LightBlue, Darkblue])
+def change_background_color():
+    global bg_color
+    bg_color = random.choice([Blue, LightBlue, Darkblue])
     
 all_sprite_list  = pygame.sprite.Group()
 sp1 = Sprite(White, 20, 30)
@@ -63,7 +63,7 @@ while not exit:
         elif event.type == sprite_color_change_event:
             sp1.change_color()
         elif event.type == Backround_color_change_event:
-            sp1.change_background_color()
+            change_background_color()
     all_sprite_list.update()
     screen.fill(bg_color)
     all_sprite_list.draw(screen)
